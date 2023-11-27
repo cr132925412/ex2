@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>中国茶文化</title>
+		<title>PC端网页布局-横向全屏缩放(contain)</title>
 		<style>
 			#main {							
 				width: 100%;
@@ -13,7 +13,7 @@
 				min-width: 500px;
 				z-index: -10;
 				zoom: 1;				
-				background-image: url("./mulubj.png");
+				background-image: url("http://mms2.baidu.com/it/u=1731748703,3873472281&fm=253&app=120&f=PNG?w=554&h=340");
 				background-repeat:no-repeat;
 				background-size:contain;
 				background-position: center 0;
@@ -45,20 +45,123 @@
 				font-size:40px;
 				font-family:隶书;
 			}
+			.ripple-button {
+			  display: inline-block;
+			  position: relative;
+			  overflow: hidden;
+			  border: none;
+			  outline: none;
+			  background-color: transparent;
+			  color: #000000;
+			  font-size: 40px;
+			  font-family: "隶书";
+			  cursor: pointer;
+			  width: 80px;
+			  height: 80px;
+			  border-radius: 50%;
+			  text-align: center;
+			  line-height: 80px;
+			}
+			
+			.ripple-button::after {
+			  content: "";
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  width: 0;
+			  height: 0;
+			  background-color: rgba(213, 255, 234, 0.5);
+			  border-radius: 50%;
+			  opacity: 0;
+			  pointer-events: none;
+			}
+			
+			.ripple-button:hover::after {
+			  width: 120%;
+			  height: 120%;
+			  opacity: 1;
+			  transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+			}
+			#view_div {
+				width: 500px;
+				height: 350px;
+				position: absolute;
+				top: 10px;
+				left: 9.7%;
+				background-image: url('https://pic.quanjing.com/3b/7u/QJ8878469832.jpg@%21794ws');
+				background-size: 100% 100%;
+				
+			}
+			.main_span {
+			    color: #fff;
+			    font-size: 14px;
+			    position: absolute;
+			    bottom: 10px;
+			    left: 10px;
+			}
+			.preview {
+				position: absolute;
+			    /* width: 100%; */
+			    /* max-width: 1024px; */
+				left: 9.7%;
+			    top:45%;
+				transform: translateY(-50%);
+			    text-align: center;
+			    padding: 10px;
+			    height: auto;
+			}
+			.preview img {
+			    width: 100px;
+			    height: auto;
+			    cursor: pointer;
+			}
 		</style>
+		<script type="text/javascript">
+		    document.addEventListener('DOMContentLoaded', function() {
+		        var previewImages = document.querySelectorAll('.preview img');
+		        var viewDiv = document.getElementById('view_div');
+		            
+		        for (var i = 0; i < previewImages.length; i++) {
+		            previewImages[i].addEventListener('click', changeViewImage);
+		        }
+		            
+		        function changeViewImage() {
+		            var imageUrl = this.getAttribute('src');
+		            viewDiv.style.backgroundImage = 'url(' + imageUrl + ')';
+		        }
+		    });
+		</script>
 		<link rel="stylesheet" href="css/main.css" type="text/css">
 	</head>
-
+    
 	<body>
 		<div id="main">
 			<h1>目录</h1>
     		<div class="menu">
     			<a href="https://cr132925412.github.io/ex2/">返回首页</a>
     		</div>
-			<div class="p1"><a href="">文化</a></div>
-			<div class="p2"><a href="">介绍</a></div>
-			<div class="p3"><a href="">功能</a></div>
-			<div class="p4"><a href="">问答</a></div>
+			<div id="view_div" >
+		        
+		    </div>
+			<div class="preview">
+			    <img src="https://pic.quanjing.com/3b/7u/QJ8878469832.jpg@%21794ws" />
+			    <img src="https://pic.quanjing.com/6i/w9/QJ6145339715.jpg?x-oss-process=style/show_794s" />
+			    <img src="https://pic.quanjing.com/ls/hd/QJ9110234130.jpg@%21350h" />
+				<img src="https://img0.baidu.com/it/u=3801363129,4052490670&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" />
+			</div>
+			<div class="p1">
+			  <a class="ripple-button" href="">文化</a>
+			</div>
+			<div class="p2">
+			  <a class="ripple-button" href="">介绍</a>
+			</div>
+			<div class="p3">
+			  <a class="ripple-button" href="">功能</a>
+			</div>
+			<div class="p4">
+			  <a class="ripple-button" href="">问答</a>
+			</div>
 		</div>
 	</body>
 </html>
