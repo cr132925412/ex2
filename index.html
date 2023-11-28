@@ -76,7 +76,22 @@
 				opacity: 1;
 				transition: opacity 0.6s ease;
 			}
-			
+			.music-button {
+			  background-image: url('music.png');
+			  position: absolute; 
+			  top: 30px;
+			  left: 1700px; 
+			  height: 50px;
+			  width: 50px;
+			  border-radius: 50%;
+			  text-indent: -9999px; 
+			  background-image: url('music.png');
+			  background-size: cover;
+			  transition: background-image 0.3s ease-in-out;
+			}
+			.music-button.playing {
+			  background-image: url('music1.png');
+			        }
 			
 		</style>
 		<link rel="stylesheet" href="css/main.css" type="text/css">
@@ -96,10 +111,28 @@
 			
 			<div class ="menu">
 				<p class="button-container" style="margin-left: 550px;margin-top: 200px;">
-					<a href="mulu.html" class="button button-fade-out">品一杯</a>
-					<a href="mulu.html" class="button button-fade-in">点击了解</a>
+					<a href="mulu.html" target="_blank" class="button button-fade-out">品一杯</a>
+					<a href="mulu.html" target="_blank" class="button button-fade-in">点击了解</a>
 				</p>
 			</div>
+			<audio id="myAudio" src="行云流水.mp3"></audio>
+			
+			    <button class="music-button" onclick="toggleMusic()"></button>
+			
+			    <script>
+			        var audio = document.getElementById("myAudio");
+			        var button = document.querySelector(".music-button");
+			
+			        function toggleMusic() {
+			             if (audio.paused) {
+			                    audio.play();
+			                    button.classList.add("playing");
+			             } else {
+			                     audio.pause();
+			                   button.classList.remove("playing");
+			                  }
+			         }
+			    </script>
 		</div>
 		
 	</body>
