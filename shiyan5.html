@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中国茶文化</title>
+  <style>
+    #main {
+      position: relative;
+	  display: flex;
+	  
+	  align-items: center;
+      width: 100%;
+      height: 100%;
+      min-width: 500px;
+      zoom: 1;
+     
+    }
+	
+	.container{
+		position: absolute;
+		display: flex;
+		
+		left:20%;
+	}
+
+    .wenhua {
+		position: relative;
+      height: 400px;
+      width: 800px;
+      
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 10px;
+      border: 4px solid black;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-image: url(https://img.zcool.cn/community/01f63a584f9368a801219c77765445.jpg@1280w_1l_2o_100sh.jpg);
+      animation: scrollText 10s linear infinite;
+    }
+
+    .biaoti {
+      border: 4px solid greenyellow;
+      position: absolute;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+	  left:0;
+	  right:0;
+	  top:0;
+	  transform: translate(0, -100%);
+      font-size: 30px;
+      color: aliceblue;
+      padding: 20px;
+      background-image: url(https://ts1.cn.mm.bing.net/th/id/R-C.1444c2dc54abf4c3c66a7f57c4276efc?rik=fkbHnr8Qcw91Dg&riu=http%3a%2f%2fpuui.qpic.cn%2fvpic_cover%2fk07285weurz%2fk07285weurz_hz.jpg%2f1280&ehk=ze24H5y78lKiJpVkQk7dX5LzOr1hdVfOt0nXUnb0OVM%3d&risl=&pid=ImgRaw&r=0)
+    }
+
+    .LS {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+		
+      border: 4px solid greenyellow;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+	  
+      padding: 20px;
+	  
+	  width: 230px;
+      height: 370px;
+      background-image: url(https://ts1.cn.mm.bing.net/th/id/R-C.1444c2dc54abf4c3c66a7f57c4276efc?rik=fkbHnr8Qcw91Dg&riu=http%3a%2f%2fpuui.qpic.cn%2fvpic_cover%2fk07285weurz%2fk07285weurz_hz.jpg%2f1280&ehk=ze24H5y78lKiJpVkQk7dX5LzOr1hdVfOt0nXUnb0OVM%3d&risl=&pid=ImgRaw&r=0)
+    }
+	
+	.LS-item{
+		cursor: pointer;
+	}
+
+	.content-font-shape{
+		font-size: 30px;
+		color: aliceblue;
+	}
+	html,body{
+		    width:100%;
+	      	height:100%;
+	      	margin:0px;
+	      	overflow:hidden;
+	      }
+	      #mainDiv{
+	      	position:fixed;
+	      	left:0px;
+	      	top:0px;
+	      
+		    width:100%;
+	      	height:100%;
+	      		z-index: -1;
+	      	transition:all 1s ease;
+	      }
+	      #mainDiv div{
+		    width:100%;
+	      	height:100%;
+	      	
+	      	background-repeat:no-repeat;
+	      	
+	      	background-size:cover;
+	      }
+	      .page1{
+		    background-image:url(https://ts1.cn.mm.bing.net/th/id/R-C.d1c718d4338d39696d0b81c271a79942?rik=lhnB5iWDNDrdqg&riu=http%3a%2f%2fseopic.699pic.com%2fphoto%2f50073%2f9221.jpg_wh1200.jpg&ehk=UPTvx9ZFrWar87lJSp4N0AFy3VfRfXn2MDue3EUhVOk%3d&risl=&pid=ImgRaw&r=0);
+			
+	      }
+	      .page2{
+		    background-image:url(https://x0.ifengimg.com/res/2021/528B4B93BA435E54A3E7CBB395E211D675029DD5_size376_w1280_h852.jpeg);
+	      }
+	      .page3{
+		    background-image:url(https://img.zcool.cn/community/011c5957ccf3600000012e7e580a70.jpg@1280w_1l_2o_100sh.jpg);
+	      }
+	      .page4{
+		    background-image:url(https://img1.gtn9.com/eff98552e83841d5b9c0ce1ec87b6141.jpg);
+	      }
+	      .btn_list{
+		    position:fixed;
+	      	top:30%;
+	      	right:50px;
+	      }
+	      ul{
+		    list-style-type:none;
+	      }
+	      li{
+		    width:20px;
+	      	height:20px;
+	      	margin-top:10px;
+	      	border-radius:20px;
+	      	background-color:#3D3D3D;
+	      	cursor:pointer;
+	      }
+	      #li0{
+		    background-color:#10508D;
+	      }
+		  .return a{
+			  position: fixed;
+			  top:10%;
+			  left: 5%;
+			  border: 4px  greenyellow;
+			  border-radius: 20px;
+			  background-image:url(https://ts1.cn.mm.bing.net/th/id/R-C.1444c2dc54abf4c3c66a7f57c4276efc?rik=fkbHnr8Qcw91Dg&riu=http%3a%2f%2fpuui.qpic.cn%2fvpic_cover%2fk07285weurz%2fk07285weurz_hz.jpg%2f1280&ehk=ze24H5y78lKiJpVkQk7dX5LzOr1hdVfOt0nXUnb0OVM%3d&risl=&pid=ImgRaw&r=0) ;
+			  text-decoration:none;
+			  color:#ffffff;
+			  font-family: cursive;
+			  font-size: 70px;
+			  font-weight: bold;
+		  }
+
+  </style>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <script>
+	window.onload = function () {
+		const wenhuaTextDict={
+			"周秦两汉"	:"约公元前1000年周武王伐纣时，巴蜀一带已用茶叶作为“纳贡”珍品，是茶作为贡品的最早记录。泰统一六国后，四川茶树栽培、制作技术向陕西、河南等地传播，后逐渐沿着长江中、下游推移。",
+			"西汉"		: "唐代饮茶已是日常普及之事。陆羽《茶经》的问世使“茶事大兴”，奠定了中国茶文化基础。唐代茶业由此日益兴盛。日本僧人从中国带茶籽回国，将茶叶传播到日本，是后世茶文化遍及世界的发端。唐代茶文化的发展对后世以及世界都产生了巨大影响。",
+			"三国两晋"	:"《三国志》记载了东吴君主孙皓(孙权后代)“赐茶茗以当酒”的故事，这是“以茶代酒”最早记载。西晋张载的《登成都楼》诗中有旬：“芳茶六种清凉冠”；孙楚所作歌中也提到：“茶，巴蜀出”，可知长江流域是中国茶树的发源地。东晋以茶果待客，已是很普遍的事情了。",
+			"南北朝"		:"南朝接近茶产地，饮茶极为普遍。但在南北朝初期 茶是作为贡品出现的。南北朝以后，士大夫们为了逃避现实，整日作诗品茶。使茶叶消费激增，茶在南方成为普遍饮品。",
+			"唐朝"		:"唐代饮茶已是日常普及之事。陆羽《茶经》的问世使“茶事大兴”，奠定了中国茶文化基础。唐代茶业由此日益兴盛。日本僧人从中国带茶籽回国，将茶叶传播到日本，是后世茶文化遍及世界的发端。唐代茶文化的发展对后世以及世界都产生了巨大影响。",
+			"元朝"		:"元代时期，民间一般只饮散茶、末茶，饼茶与团茶主要用于贡品。随着制茶技术的不断提高，出现了机械制茶叶。國明朝明代时，各地的茶叶贸易已很普遍。这时的饮茶方式由煎煮逐渐变为泡饮。饮茶场所也由户内移至户外“斗茶”之风较宋代更甚，茶人之间互相比较茶技高低饮茶又一次大为风行。",
+			"清朝"		:"清代初期，清政府废弃所有禁令，允许人民自由种植茶叶，茶已是人们日常不可或缺的饮品。这时的茶叶生产已相当发达，开始向法国、英国、美国等国家出口。但随着清代政治、经济的衰落，茶文化也不再有唐宋时的兴盛，开始日渐走向衰微。"
+		}
+		
+		
+		const lishiTextElement = document.querySelector('.lishitext');
+		const lishiBtnList = document.querySelectorAll('.LS-item');
+		
+
+		 for (const lishiBtn of lishiBtnList) {
+		    lishiBtn.addEventListener('click', function (e) {
+		      e.preventDefault(); // 阻止默认事件
+		      e.stopPropagation(); // 阻止事件冒泡
+		
+		      const lishiBtn = e.target;
+		
+		      lishiTextElement.innerText = wenhuaTextDict[lishiBtn.getAttribute("buttonType")];
+		    });
+		  }
+		
+		  // 为li添加鼠标点击事件
+		  for (var i = 0; i <= 3; i++) {
+		    document.getElementById("li" + i).onclick = function () {
+		      index = this.id.replace("li", ""); // 通过id获取当前显示第几屏
+		      pageAnimate();
+		    };
+		  }
+		
+		  // 窗口大小重置
+		  window.onresize = function () {
+		    // 暂时去掉mainDiv的过渡动画
+		    document.getElementById("mainDiv").style.transition = "all 0s ease";
+		
+		    pageAnimate(); // 切屏
+		
+		    // 重新加上mainDiv的过渡动画
+		    window.setTimeout(function () {
+		      document.getElementById("mainDiv").style.transition = "all 1s ease";
+		    }, 10);
+		  };
+		
+		  // 设置显示哪一屏，并设置右浮动按扭显示样式
+		  function pageAnimate() {
+		    var offsetHeight = document.body.offsetHeight;
+		    document.getElementById("mainDiv").style.top = -(offsetHeight * index) + "px";
+		
+		    // 设置右则浮动按扭的显示样式
+		    for (var i = 0; i <= 3; i++) {
+		      document.getElementById("li" + i).style.backgroundColor = "#3D3D3D";
+		    }
+		    document.getElementById("li" + index).style.backgroundColor = "#10508D";
+		  }
+		
+		};
+		
+      </script>
+</head>
+
+<body>
+<div id="main">
+	<div class="return" >
+		<a href="">返回</a>
+	</div>
+	<div class="container">
+		<div class="wenhua left-sidebar content-font-shape">
+			<div class="biaoti">
+			  中国茶文化的传承及演变
+			</div>
+		  <div id="view_box">
+		    <div class="lishitext">约公元前1000年周武王伐纣时，巴蜀一带已用茶叶作为“纳贡”珍品，是茶作为贡品的最早记录。泰统一六国后，四川茶树栽培、制作技术向陕西、河南等地传播，后逐渐沿着长江中、下游推移。</div>
+		  </div>
+		</div>
+		<div class="LS right-sidebar content-font-shape">
+		  <div class="LS-item" buttonType="周秦两汉">🍃周秦两汉🍃</div>
+		  <div class="LS-item" buttonType="西汉">🍃西汉🍃</div>
+		  <div class="LS-item" buttonType="三国两晋">🍃三国两晋🍃</div>
+		  <div class="LS-item" buttonType="南北朝">🍃南北朝🍃</div>
+		  <div class="LS-item" buttonType="唐朝">🍃唐朝🍃</div>
+		  <div class="LS-item" buttonType="元朝">🍃元朝🍃</div>
+		  <div class="LS-item" buttonType="清朝">🍃清朝🍃</div>
+		</div>
+	</div> 
+<div id="mainDiv">
+      <div class="page1"></div>
+      <div class="page2"></div>
+      <div class="page3"></div>
+      <div class="page4"></div>
+    </div>
+    
+    <div class="btn_list">
+      <ul>
+        <li id="li0"></li>
+        <li id="li1"></li>
+        <li id="li2"></li>
+        <li id="li3"></li>
+      </ul>
+    </div>
+</div>
+
+</body>
+</html>
