@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>介绍</title>
+		<style>
+			#main {
+				width: 100%;
+				height: 70%;
+				min-width: 500px;
+				z-index: -10;
+				zoom: 1;				
+				background-image: url("https://img1.baidu.com/it/u=3967288180,428913245&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=328");
+				background-repeat:no-repeat;
+				background-size:contain;
+				background-position: center 0;
+			}
+			.progressBar{
+			    width:1000px;
+			    height:200px;
+			    margin:100px auto 0px auto;
+			}
+			.titleDiv{
+			    width:1000px;
+			    height:30px;
+			}
+			.titleDiv div{
+			    float:left;
+			    width:142.857px;
+			    text-align:center;   
+			}
+			.barDiv{
+			    width:1000px;
+			    height:30px;
+			}
+			.numberList{
+			    position:relative;
+			    width:1000px;
+			    height:30px;
+			    display:flex;
+			    justify-content:space-around;
+			}
+			.numCircle{
+			    background-color:#DAD9D9;
+			    width:30px;
+			    height:30px;
+			    display:flex;
+			    justify-content:center;
+			    align-items:center;
+			    border-radius:30px;
+			    cursor:pointer;
+			    transition: background-color 0.5s;
+			}
+			.numCircle.active {
+			    background-color:#64BD2E;
+			    color:white;
+			}
+			.bar{
+			    position:relative;
+			    background-color:#DDDDDD;
+			    width:1000px;
+			    height:5px;
+			    top:17px;
+			}
+			#greenBar{
+			    width:14.286%;
+			    height:5px;
+			    background-color:#64BD2E;
+			    transition: width 0.5s;
+			}
+			.statusText {
+			    margin-top: 20px;
+			    font-weight: bold;
+			    font-size: 20px;
+			    text-align: center;
+			}
+			.introText {
+			    margin-top: 20px;
+			    font-size: 18px;
+			    text-align: center;
+				font-family:楷书;
+			}
+			a{
+			    color:#000000;
+			    text-decoration:none;
+				font-weight:bold;
+				font-size:40px;
+				font-family:隶书;
+			}
+		</style>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script type="text/javascript">
+		    window.onload = function(){
+		        var numCircles = document.querySelectorAll(".numCircle");
+		        var statusText = document.createElement("div");
+		        statusText.className = "statusText";
+		        document.body.appendChild(statusText);
+		        var introTexts = [
+		          "绿茶是将采摘来的鲜叶先经高温杀青，杀灭了各种氧化酶，保持了茶叶绿色，然后经揉捻、干燥而制成，清汤绿叶是绿茶品质的共同特点。绿茶依其杀青和干燥方式不同又可分为蒸青绿茶、炒青绿茶、烘青绿茶和晒青绿茶四种类型。以蒸汽杀青制成的绿茶称“蒸青绿茶”，最终干燥是炒干的称“炒青绿茶”，烘干的称“烘青绿茶”，晒干的称“晒青绿茶”。",
+		          "红茶的鲜叶原料与绿茶是一样的，只是不经过高温杀青，而是采用萎凋、揉捻，然后经过发酵使叶子变红以后烘干而制成，红茶的品质特征是红汤红叶。红茶可分为小种红茶、工夫红茶和红碎茶三种类型。",
+		          "乌龙茶属半发酵茶类，是介于不发酵茶（绿茶）和全发酵茶（红茶）之间的一类茶叶，外形色泽青褐，因此也称“青茶”。乌龙茶冲泡后，叶片上有红有绿，典型的乌龙茶，叶片中间吐绿色，叶缘呈红色，素有“绿叶红镶边”之美称这是由于乌龙茶制造过程中有摇青做青工序，叶缘摇碰破损红变所致。乌龙茶味浓醇有天然花香，倍受港、澳、东南亚茶客的青睐。乌龙茶主产于福建、广东、台湾省区。著名的乌龙茶有福建崇安的武夷岩茶、安溪铁观音、黄金桂、台湾的冻顶乌龙和台湾包种等。",
+		          "白茶属轻微发酵茶，基本工艺过程是萎凋、晒干或烘干。白茶常选用芽叶上白茸毛多的品种制作，干燥后的成品茶满披白色茸毛故称。白茶汤色、滋味均较清淡，据说有清火解毒之功效。白茶有芽茶和叶茶之分，单芽制成的称“银针”，叶片制成的称“寿眉”，芽叶不分离的称“白牡丹”。白茶主产于福建、广东等省。",
+		          "其品质特点是黄汤黄叶，这是制茶过程中进行闷堆渥黄的结果。著名的黄茶有湖南的君山银针和伪山毛尖、四川的蒙顶黄芽、安徽的霍山黄芽和黄大茶、浙江的平阳黄汤、湖北的远安鹿苑、广东的大叶青等。",
+		          "黑茶的基本工艺流程是杀青、揉捻、渥堆、干燥。黑茶一般原料较粗老，加之制造过程中往往堆积发酵时间较长，因此叶色油黑或黑褐，故称黑茶。黑茶主产于湖北、湖南、四川、云南、广西等省（区）。黑茶是制造紧压茶（砖茶、饼茶等）的原料，主销于西藏青海、新疆等省区，是少数民族喜爱的主要茶类。",
+		          "用茶叶和香茶进行拼和窨制，使茶叶吸收花香而制成的香茶，亦称熏花茶。窨制花茶的香花有茉莉花、致瑰花、珠兰花、米兰花、玳玳花、柚子花、白兰花、桂花、栀子花、金银花等。苍茶的茶坯除烘青以外，近年来用细嫩绿茶和毛峰、大方等做茶坯的也较多，好茶配好茶，花茶质量更上档次。花茶的茶香浓郁程度决定于下花量和窨制次数，下花量大、窨制次数多，花香更浓郁。著名花茶的产地有福州、苏州、金华、桂林、广州、重庆、成都、台北等地。花茶主销华北、东北、山东、四川等省区。"
+		        ];
+		        numCircles.forEach(function(circle, index) {
+		            circle.onclick = function() {
+		                document.getElementById("greenBar").style.width = (index + 1) * 14.286 + "%";
+		                numCircles.forEach(function(circle) {
+		                    circle.classList.remove("active");
+		                });
+		                circle.classList.add("active");
+		                statusText.innerText = (index + 1) + "/7";
+		                var introText = document.querySelector(".introText");
+		                if (introText) {
+		                    introText.parentNode.removeChild(introText);
+		                }
+		                var newIntroText = document.createElement("div");
+		                newIntroText.className = "introText";
+		                newIntroText.innerText = introTexts[index];
+		                document.body.appendChild(newIntroText);
+		            };
+		        });
+		    };
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<h1>介绍</h1>
+			<div class="menu">
+				<a href="https://cr132925412.github.io/ex2/mulu.html">返回目录</a>
+			</div>
+			<div class="progressBar">
+				<div class="titleDiv">
+				    <div>绿茶</div>
+				    <div>红茶</div>
+				    <div>乌龙茶</div>
+				    <div>白茶</div>
+				    <div>黄茶</div>
+				    <div>黑茶</div>
+				    <div>花茶</div>
+				</div>
+				<div class="barDiv">
+				    <div class="bar"><div id="greenBar"></div></div>
+				        <div class="numberList">
+				            <div class="numCircle active">1</div>
+				            <div class="numCircle">2</div>
+				            <div class="numCircle">3</div>
+				            <div class="numCircle">4</div>
+				            <div class="numCircle">5</div>
+				            <div class="numCircle">6</div>
+				            <div class="numCircle">7</div>
+				        </div>
+				    </div>
+			    </div>
+			</div>
+	</body>
+</html>
