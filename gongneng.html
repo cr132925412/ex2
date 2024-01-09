@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文本轮播特效</title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+	
+    .mainDiv{
+      width:900px;
+      height:400px;
+      border:1px solid none;
+	  border-radius: 20px;
+      margin:0 auto;
+      background-image: url("res07.jpg");
+      overflow:hidden;
+      position:relative;
+	   top: 150px;
+    }
+    #view_box{
+      position: absolute;
+      height: 100px;
+      width: 4500px;
+      transition: left 1s;
+      white-space: nowrap;
+    }
+    .view_item{
+      display: inline-block;
+      width: 900px;
+      text-align: center;
+      font-size: 37px;
+      padding-top: 30px;
+	   white-space: normal;
+	   font-family: cursive;
+	  
+    }
+    .btn {
+      position: absolute;
+	  border-radius: 20px;
+      top: 35px;
+      width: 80px;
+      height: 30px;
+      font-size: 25px;
+      text-align: center;
+      background-color: #000000;
+      cursor: pointer;
+      z-index: 1; 
+	  font-family: cursive;
+	  font-weight: bold;
+	  color: azure;
+	  
+    }
+    #leftBtn {
+      left: 0;
+	
+    }
+    #rightBtn {
+      right: 0;
+	
+	  
+    }
+	body {
+	  background-image: url('res08.jpg');
+	  background-size: cover;
+	  background-attachment: fixed;
+	  background-position: center;
+	}
+    </style>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var index = 0;
+
+      $("#leftBtn").click(function() {
+        index--;
+        if (index < 0) {
+          index = 4;
+        }
+        $("#view_box").css("left", (-900 * index) + "px");
+      });
+
+      $("#rightBtn").click(function() {
+        index++;
+        if (index > 4) {
+          index = 0;
+        }
+        $("#view_box").css("left", (-900 * index) + "px");
+      });
+    });
+    </script>
+</head>
+<body>
+    <div class="mainDiv">
+      <div id="leftBtn" class="btn">上一页</div>
+      <div id="view_box">
+        <div class="view_item">绿茶<br>绿茶是不发酵茶，由于其特性决定了它较多的保留了鲜叶内的天然物质。其中茶多酚、咖啡碱保留了鲜叶的85%以上，叶绿素保留50%左右，维生素损失也较少，从而形成了绿茶“清汤绿叶，滋味收敛性强”的特点。对防衰老、防癌、抗癌、杀菌、消炎等均有特殊效果，为发酵类茶等所不及。</div>
+        <div class="view_item">乌龙茶<br>乌龙茶是经过采摘、萎凋、摇青、炒青、揉捻、烘焙等工序后制出的品质优异的茶类。乌龙茶由宋代贡茶龙团、凤饼演变而来，创制于1725年（清雍正年间）前后。品尝后齿颊留香，回味甘鲜。乌龙茶的药理作用，突出表现在分解脂肪、减肥健美等方面。在日本被称之为“美容茶”、“ 健美茶”。</div>
+        <div class="view_item">红茶<br>红茶含有维生素、咖啡因、氨基酸、矿物质、多糖、茶多酚等多种营养和功效成分。研究表明，红茶具有辅助降血糖、降血压、降血脂的功效。红茶中的茶色素具有抗氧化、抗肿瘤、抗炎抑菌、抗突变、抗病毒、除臭等功效。 [15]能清热解表；用于急、慢性肠炎，痢疾；急性肝炎，消化不良，衰老等病症。</div>
+        <div class="view_item">白茶<br>白茶防癌、抗癌、防暑、解毒、治牙痛，尤其是陈年的白茶可用作患麻疹的幼儿的退烧药，其退烧效果比抗生素更好。在中国华北及福建产地被广泛视为治疗养护麻疹患者的良药。故清代名人周亮工在《闽小记》中载：“白毫银针，产太姥山鸿雪洞，其性寒，功同犀角，是治麻疹之圣药。</div>
+        <div class="view_item">黄茶<br>黄茶是沤茶，在沤的过程中，会产生大量的消化酶，对脾胃最有好处，消化不良，食欲不振、懒动肥胖、都可饮而化之。
+此外，黄茶鲜叶中天然物质保留有85%以上，而这些物质对防癌、抗癌、杀菌、消炎均有特殊效果，为其他茶叶所不及。</div>
+      </div>
+      <div id="rightBtn" class="btn">下一页</div>
+    </div>
+</body>
+</html>
